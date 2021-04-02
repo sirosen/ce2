@@ -86,7 +86,7 @@ def main():
     amcosts = sorted(amcosts, key=lambda x: sum(x[1]), reverse=True)
     amcosts = [(x, y) for (x, y) in amcosts if sum(y) > 0.0]
 
-    max_name_width = max(len(x) for x, y in amcosts)
+    max_name_width = max(len(x) for x in ([k for k, v in amcosts] + ["Service"]))
     cols = ("Est. Monthly", "Running Total", "Average", "Variance", "Yesterday")
     cols = [(x, len(x)) for x in cols]
     print(
